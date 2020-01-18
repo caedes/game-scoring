@@ -1,10 +1,11 @@
-import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import GroupIcon from "@material-ui/icons/Group";
-import HomeIcon from "@material-ui/icons/Home";
 import HistoryIcon from "@material-ui/icons/History";
+import HomeIcon from "@material-ui/icons/Home";
+import React from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -15,8 +16,14 @@ const useStyles = makeStyles({
 });
 
 export default function Footer() {
+  const currentLocation = useLocation();
+  const footerLocations = ["/", "/history", "/gamers"];
+  const currentLocationIndex = footerLocations.indexOf(
+    currentLocation.pathname
+  );
+
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(currentLocationIndex);
 
   return (
     <BottomNavigation
@@ -27,9 +34,24 @@ export default function Footer() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Accueil" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Historique" icon={<HistoryIcon />} />
-      <BottomNavigationAction label="Joueurs" icon={<GroupIcon />} />
+      <BottomNavigationAction
+        label="Accueil"
+        icon={<HomeIcon />}
+        component={Link}
+        to="/"
+      />
+      <BottomNavigationAction
+        label="Historique"
+        icon={<HistoryIcon />}
+        component={Link}
+        to="/history"
+      />
+      <BottomNavigationAction
+        label="Joueurs"
+        icon={<GroupIcon />}
+        component={Link}
+        to="/gamers"
+      />
     </BottomNavigation>
   );
 }
