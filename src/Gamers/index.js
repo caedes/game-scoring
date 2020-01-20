@@ -1,12 +1,28 @@
+import { makeStyles } from "@material-ui/core/styles";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 
+const useStyles = makeStyles(theme => ({
+  fab: {
+    position: "absolute",
+    bottom: theme.spacing(2) + 56,
+    right: theme.spacing(2)
+  }
+}));
+
 export default function Gamers() {
+  const classes = useStyles();
+
   return (
-    <div>
+    <>
+      <Fab className={classes.fab} color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
       <Typography variant="h4">Gamers</Typography>
       <List component="nav">
         <ListItem>
@@ -16,6 +32,6 @@ export default function Gamers() {
           <ListItemText primary="Romain" />
         </ListItem>
       </List>
-    </div>
+    </>
   );
 }

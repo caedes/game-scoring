@@ -11,7 +11,8 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     position: "absolute",
-    bottom: 0
+    bottom: 0,
+    borderTop: "1px solid #f1f1f1"
   }
 });
 
