@@ -1,7 +1,6 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-
 import { BrowserRouter, Route } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 
 import Footer from "../Footer";
 import Home from "../Home";

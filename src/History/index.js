@@ -1,10 +1,11 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+
+import Header from "../Header";
 
 export default function History() {
   return (
-    <div>
-      <Typography variant="h4">History</Typography>
-    </div>
+    <>
+      <Header title="Historique" />
+    </>
   );
 }

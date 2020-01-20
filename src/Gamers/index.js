@@ -5,7 +5,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+
+import Header from "../Header";
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -23,7 +24,7 @@ export default function Gamers() {
       <Fab className={classes.fab} color="primary" aria-label="add">
         <AddIcon />
       </Fab>
-      <Typography variant="h4">Gamers</Typography>
+      <Header title="Gamers" />
       <List component="nav">
         <ListItem>
           <ListItemText primary="Julia" />
