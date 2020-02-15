@@ -5,17 +5,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
+import { useQuery } from "react-query";
 
-import firestore from "../firestore";
-
-firestore
-  .collection("gamers")
-  .get()
-  .then(querySnapshot => {
-    querySnapshot.forEach(doc => {
-      console.log(`${doc.id} => ${doc.data().name}`);
-    });
-  });
+import fetchGamers from "../fetch-gamers";
 
 const useStyles = makeStyles(theme => ({
   fab: {
@@ -28,21 +20,23 @@ const useStyles = makeStyles(theme => ({
 export default function GamersScreen({ headerComponent }) {
   const Header = headerComponent;
   const classes = useStyles();
+  const { data: gamers } = useQuery("gamers", fetchGamers);
 
   return (
     <>
       <Fab className={classes.fab} color="primary" aria-label="add">
         <AddIcon />
       </Fab>
-      {headerComponent && <Header title="Gamers" />}
-      <List component="nav">
-        <ListItem>
-          <ListItemText primary="Julia" />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary="Romain" />
-        </ListItem>
-      </List>
+      {headerComponent && <Header title="Joueurs" />}
+      {gamers && (
+        <List component="nav">
+          {gamers.map(gamer => (
+            <ListItem key={gamer.id}>
+              <ListItemText primary={gamer.name} />
+            </ListItem>
+          ))}
+        </List>
+      )}
     </>
   );
 }
