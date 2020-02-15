@@ -6,7 +6,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
 
-import Header from "../Header";
 import firestore from "../firestore";
 
 firestore
@@ -26,7 +25,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function GamersScreen() {
+export default function GamersScreen({ headerComponent }) {
+  const Header = headerComponent;
   const classes = useStyles();
 
   return (
@@ -34,7 +34,7 @@ export default function GamersScreen() {
       <Fab className={classes.fab} color="primary" aria-label="add">
         <AddIcon />
       </Fab>
-      <Header title="Gamers" />
+      {headerComponent && <Header title="Gamers" />}
       <List component="nav">
         <ListItem>
           <ListItemText primary="Julia" />

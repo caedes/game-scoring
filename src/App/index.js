@@ -4,6 +4,7 @@ import React from "react";
 
 import Footer from "../Footer";
 import GamersScreen from "../GamersScreen";
+import Header from "../Header";
 import HistoryScreen from "../HistoryScreen";
 import HomeScreen from "../HomeScreen";
 
@@ -24,9 +25,15 @@ export default function App() {
       <BrowserRouter>
         <div className={classes.container}>
           <Switch>
-            <Route path="/" exact component={HomeScreen} />
-            <Route path="/history" component={HistoryScreen} />
-            <Route path="/gamers" component={GamersScreen} />
+            <Route path="/" exact>
+              <HomeScreen />
+            </Route>
+            <Route path="/history">
+              <HistoryScreen headerComponent={Header} />
+            </Route>
+            <Route path="/gamers">
+              <GamersScreen headerComponent={Header} />
+            </Route>
           </Switch>
         </div>
         <Route path="/" component={Footer} />

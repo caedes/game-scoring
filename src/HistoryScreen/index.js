@@ -1,11 +1,7 @@
 import React from "react";
 
-import Header from "../Header";
+export default function HistoryScreen({ headerComponent }) {
+  const Header = headerComponent;
 
-export default function HistoryScreen() {
-  return (
-    <>
-      <Header title="Historique" />
-    </>
-  );
+  return <>{headerComponent && <Header title="Historique" />}</>;
 }
