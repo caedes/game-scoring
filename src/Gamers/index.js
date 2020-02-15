@@ -7,6 +7,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
 
 import Header from "../Header";
+import firestore from "../firestore";
+
+firestore
+  .collection("gamers")
+  .get()
+  .then(querySnapshot => {
+    querySnapshot.forEach(doc => {
+      console.log(`${doc.id} => ${doc.data().name}`);
+    });
+  });
 
 const useStyles = makeStyles(theme => ({
   fab: {

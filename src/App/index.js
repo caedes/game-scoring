@@ -1,11 +1,11 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 
 import Footer from "../Footer";
-import Home from "../Home";
-import History from "../History";
 import Gamers from "../Gamers";
+import History from "../History";
+import Home from "../Home";
 
 const useStyles = makeStyles({
   root: {
@@ -23,9 +23,11 @@ export default function App() {
     <div className={classes.root}>
       <BrowserRouter>
         <div className={classes.container}>
-          <Route path="/" exact component={Home} />
-          <Route path="/history" component={History} />
-          <Route path="/gamers" exact component={Gamers} />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/history" component={History} />
+            <Route path="/gamers" component={Gamers} />
+          </Switch>
         </div>
         <Route path="/" component={Footer} />
       </BrowserRouter>
