@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Gamers() {
+export default function GamersScreen() {
   const classes = useStyles();
 
   return (

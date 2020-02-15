@@ -3,9 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 
 import Footer from "../Footer";
-import Gamers from "../Gamers";
-import History from "../History";
-import Home from "../Home";
+import GamersScreen from "../GamersScreen";
+import HistoryScreen from "../HistoryScreen";
+import HomeScreen from "../HomeScreen";
 
 const useStyles = makeStyles({
   root: {
@@ -24,9 +24,9 @@ export default function App() {
       <BrowserRouter>
         <div className={classes.container}>
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/history" component={History} />
-            <Route path="/gamers" component={Gamers} />
+            <Route path="/" exact component={HomeScreen} />
+            <Route path="/history" component={HistoryScreen} />
+            <Route path="/gamers" component={GamersScreen} />
           </Switch>
         </div>
         <Route path="/" component={Footer} />
