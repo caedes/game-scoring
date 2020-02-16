@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 
 import Footer from "../Footer";
+import GamersNewScreen from "../GamersNewScreen";
 import GamersScreen from "../GamersScreen";
 import Header from "../Header";
 import HistoryScreen from "../HistoryScreen";
@@ -37,6 +38,9 @@ export default function App() {
           </Switch>
         </div>
         <Route path="/" component={Footer} />
+        <Route path="/gamers/new">
+          <GamersNewScreen headerComponent={Header} />
+        </Route>
       </BrowserRouter>
     </div>
   );

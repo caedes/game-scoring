@@ -1,21 +1,30 @@
-import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
-import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
+import ArrowBack from "@material-ui/icons/ArrowBack";
+import IconButton from "@material-ui/core/IconButton";
+import React from "react";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({});
-
-export default function Header({ title }) {
-  const classes = useStyles();
+export default function Header({ title, hasBackButton = false }) {
+  const history = useHistory();
+  const gotoBack = () => history.goBack();
 
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            {title}
-          </Typography>
+          {hasBackButton && (
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="back"
+              onClick={gotoBack}
+            >
+              <ArrowBack />
+            </IconButton>
+          )}
+          <Typography variant="h6">{title}</Typography>
         </Toolbar>
       </AppBar>
     </>
