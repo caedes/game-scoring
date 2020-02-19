@@ -1,6 +1,8 @@
 name: Node/Firebase CD
 
-on: [master]
+on:
+  push:
+    branches: [master]
 
 jobs:
   build:
