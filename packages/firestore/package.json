@@ -1,0 +1,9 @@
+{
+  "main": "index.js",
+  "name": "@game-scoring/firestore",
+  "peerDependencies": {
+    "firebase": "^7.8.2"
+  },
+  "private": true,
+  "version": "0.1.0"
+}

@@ -1,4 +1,4 @@
-import firestore from '../firestore';
+import firestore from '@game-scoring/firestore';
 
 export default () =>
   firestore
