@@ -1,21 +1,21 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
-import Footer from "../Footer";
-import GamersNewScreen from "../GamersNewScreen";
-import GamersScreen from "../GamersScreen";
-import Header from "../Header";
-import HistoryScreen from "../HistoryScreen";
-import HomeScreen from "../HomeScreen";
+import Footer from '../Footer';
+import GamersNewScreen from '../GamersNewScreen';
+import GamersScreen from '../GamersScreen';
+import Header from '../Header';
+import HistoryScreen from '../HistoryScreen';
+import HomeScreen from '../HomeScreen';
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "100vh"
+    minHeight: '100vh',
   },
   container: {
-    minHeight: "100vh"
-  }
+    minHeight: '100vh',
+  },
 });
 
 export default function App() {
