@@ -1,9 +1,9 @@
-import firestore from "../firestore";
+import firestore from '../firestore';
 
 export default () =>
   firestore
-    .collection("gamers")
-    .orderBy("name")
+    .collection('gamers')
+    .orderBy('name')
     .get()
     .then(querySnapshot => {
       const gamers = [];
