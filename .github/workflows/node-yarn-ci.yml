@@ -25,5 +25,8 @@ jobs:
           cmd: test
       - name: Run Build
         uses: borales/actions-yarn@v2.0.0
+        env:
+          CI: true
+          EXTEND_ESLINT: true
         with:
           cmd: build
