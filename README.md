@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Secrets
+
+#### `FIREBASE_TOKEN`
+
+Needed to be set on your CI in order to correctly deploy on Firebase.
+
+Set it up in 2 easy steps:
+
+1. Copy the token from `firebase login:ci`
+2. Paste it on [GitHub secrets](https://github.com/caedes/game-scoring/settings/secrets)

@@ -23,8 +23,8 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+      - name: Archive Artifact
+        uses: actions/upload-artifact@v2
         with:
           name: build
           path: build
@@ -35,11 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v2
         with:
           name: build
+          path: build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
