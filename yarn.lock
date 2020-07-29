@@ -1922,13 +1922,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-query@^0.3.0":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@types/react-query/-/react-query-0.3.7.tgz#4ecaa3df749de46b5dadc42a2b97997651b79873"
-  integrity sha512-tmWT9YLwE6ckFKY5n08cg694fRLuuAj1IOzBRL/O3n0QuGFld/hWnE+Ms8kuiyMfe62ESvxAh59cLitXODcaQA==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-transition-group@^4.2.0":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.2.3.tgz#4924133f7268694058e415bf7aea2d4c21131470"
@@ -10869,12 +10862,12 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-query@^0.3.24:
-  version "0.3.24"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-0.3.24.tgz#0be07a7a8bf897ea1940643c0d0d34d6b65f5900"
-  integrity sha512-cAdUWSmaNX314zmyNaMiGwUfSe9htGiCGOyeggLbusbeQShdQETlBlwKSNrn+hdc2mMLK0STD0FRbSGQFWJ8RQ==
+react-query@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-2.5.6.tgz#fce28e9be4d8ab6000c257f69ef74ed49cdf0636"
+  integrity sha512-mN3y2EqRVmM2PAdqqt2wBzMZI0eO1+UMcEWXyOTnKZuoqpLSTdw87C+LdvhMrmmwlOvnV8sZZynuht/tVJv0cA==
   dependencies:
-    "@types/react-query" "^0.3.0"
+    ts-toolbelt "^6.9.4"
 
 react-router-dom@^5.1.2:
   version "5.1.2"
@@ -12698,6 +12691,11 @@ ts-pnp@1.1.5, ts-pnp@^1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.5.tgz#840e0739c89fce5f3abd9037bb091dbff16d9dec"
   integrity sha512-ti7OGMOUOzo66wLF3liskw6YQIaSsBgc4GOAlWRnIEj8htCxJUxskanMUoJOD6MDCRAXo36goXJZch+nOS0VMA==
+
+ts-toolbelt@^6.9.4:
+  version "6.13.34"
+  resolved "https://registry.yarnpkg.com/ts-toolbelt/-/ts-toolbelt-6.13.34.tgz#3bd6e1e333a75c5ddab584d293f35494cb8c9222"
+  integrity sha512-ikZwSUPO+fW+OUnyER1KCG58khTi51Di3+iVdhkK7UshqkL0Ir749B2TQ44o/khkKvDSOMzF8NuVkQLycDXnsg==
 
 tslib@^1.11.1:
   version "1.13.0"
