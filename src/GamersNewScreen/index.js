@@ -13,6 +13,7 @@ export default function GamersNewScreen({ headerComponent }) {
 
   const history = useHistory();
   const gotoBack = () => history.goBack();
+  const gotoGamers = () => history.push("/gamers");
 
   const [gamerName, setGamerName] = React.useState("");
   const onChangeGamerName = (event) => {
@@ -38,7 +39,7 @@ export default function GamersNewScreen({ headerComponent }) {
           </Button>
           <Button
             color="primary"
-            onClick={() => addGamer(gamerName)}
+            onClick={() => addGamer(gamerName).then(gotoGamers)}
             disabled={isEmpty(gamerName)}
           >
             Enregistrer
