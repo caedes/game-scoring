@@ -1,14 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import { useQuery } from "react-query";
 import AddIcon from "@material-ui/icons/Add";
-import Fab from "@material-ui/core/Fab";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import {
+  CircularProgress,
+  Fab,
+  List,
+  ListItem,
+  ListItemText,
+} from "@material-ui/core";
 import React from "react";
 
-import fetchGamers from "../fetch-gamers";
+import useGamers from "../useGamers";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -21,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
 export default function GamersScreen({ headerComponent }) {
   const Header = headerComponent;
   const classes = useStyles();
-  const { data: gamers } = useQuery("gamers", fetchGamers);
-  const history = useHistory();
 
+  const [gamers, { isLoading }] = useGamers();
+
+  const history = useHistory();
   const gotoGamersNew = () => history.push("/gamers/new");
 
   return (
@@ -37,7 +40,8 @@ export default function GamersScreen({ headerComponent }) {
         <AddIcon />
       </Fab>
       {headerComponent && <Header title="Joueurs" />}
-      {gamers && (
+      {isLoading && <CircularProgress />}
+      {!isLoading && gamers && (
         <List component="nav">
           {gamers.map((gamer) => (
             <ListItem key={gamer.id}>
