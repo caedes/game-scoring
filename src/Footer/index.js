@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import GroupIcon from "@material-ui/icons/Group";
-import HistoryIcon from "@material-ui/icons/History";
 import HomeIcon from "@material-ui/icons/Home";
 import React from "react";
 
@@ -18,7 +17,7 @@ const useStyles = makeStyles({
 
 export default function Footer() {
   const currentLocation = useLocation();
-  const footerLocations = ["/", "/history", "/gamers"];
+  const footerLocations = ["/", "/gamers"];
   const currentLocationIndex = footerLocations.indexOf(
     currentLocation.pathname
   );
@@ -40,12 +39,6 @@ export default function Footer() {
         icon={<HomeIcon />}
         component={Link}
         to="/"
-      />
-      <BottomNavigationAction
-        label="Historique"
-        icon={<HistoryIcon />}
-        component={Link}
-        to="/history"
       />
       <BottomNavigationAction
         label="Joueurs"
