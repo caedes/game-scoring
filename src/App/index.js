@@ -6,7 +6,6 @@ import Footer from "../Footer";
 import GamersNewScreen from "../GamersNewScreen";
 import GamersScreen from "../GamersScreen";
 import Header from "../Header";
-import HistoryScreen from "../HistoryScreen";
 import HomeScreen from "../HomeScreen";
 
 const useStyles = makeStyles({
@@ -28,9 +27,6 @@ export default function App() {
           <Switch>
             <Route path="/" exact>
               <HomeScreen />
-            </Route>
-            <Route path="/history">
-              <HistoryScreen headerComponent={Header} />
             </Route>
             <Route path="/gamers">
               <GamersScreen headerComponent={Header} />
