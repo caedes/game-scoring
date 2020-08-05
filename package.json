@@ -30,12 +30,14 @@
     "git-cz": "^4.7.0",
     "husky": ">=4",
     "lint-staged": ">=10",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "eslintIgnore": [
+    "build",
     "public/rollbar.js"
   ],
   "husky": {
@@ -51,6 +53,7 @@
   "scripts": {
     "build": "react-scripts build",
     "format": "prettier --write '{public,src}/**/*.{css,html,js,md}'",
+    "lint": "eslint .",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
