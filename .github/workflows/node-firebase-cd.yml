@@ -19,6 +19,8 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@v7.1.0
       - name: Run Build
         uses: borales/actions-yarn@v2.0.0
         with:
