@@ -1,6 +1,6 @@
 import firestore from "../firestore";
 
-export default () =>
+export const fetchGamers = () =>
   firestore
     .collection("gamers")
     .orderBy("name")
@@ -14,3 +14,5 @@ export default () =>
 
       return gamers;
     });
+
+export const postGamer = (name) => firestore.collection("gamers").add({ name });

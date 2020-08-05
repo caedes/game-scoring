@@ -1,13 +1,15 @@
-import { useQuery } from "react-query";
+import { queryCache, useQuery, useMutation } from "react-query";
 
-import fetchGamers from "./fetch";
+import { fetchGamers, postGamer } from "./api-client";
 
 export default function useGamers() {
   const { data: gamers, isLoading, error } = useQuery("gamers", fetchGamers);
 
-  const addGamer = (name) => {
-    console.log({ name });
-  };
+  const [addGamer] = useMutation(postGamer, {
+    onSuccess: () => {
+      queryCache.invalidateQueries("gamers");
+    },
+  });
 
   return [gamers, { isLoading, error, addGamer }];
 }
