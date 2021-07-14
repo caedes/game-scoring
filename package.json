@@ -29,7 +29,7 @@
     "firebase-tools": "^8.6.0",
     "git-cz": "^4.7.0",
     "husky": ">=4",
-    "lint-staged": ">=10",
+    "lint-staged": ">=11",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7"
   },
